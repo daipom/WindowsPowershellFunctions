@@ -1,0 +1,1 @@
+ls -Recurse | ?{$_.Mode -like "d*"}

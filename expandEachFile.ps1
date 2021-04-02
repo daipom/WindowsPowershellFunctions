@@ -1,0 +1,1 @@
+getFileNameList | %{expandOneFile.ps1 $_}

@@ -1,0 +1,1 @@
+svn st | sls \? | %{($_ -split " ")[-1]} | rm -Force -Recurse
