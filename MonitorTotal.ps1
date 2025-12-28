@@ -1,5 +1,5 @@
 Param(
-    [ValidateSet("CommittedBytesInUse", "AvailableKBytes", "ProcessorTime")][string[]] $MonitorList = @("CommittedBytesInUse", "AvailableKBytes", "ProcessorTime"),
+    [ValidateSet("CommittedBytesInUse", "AvailableKBytes", "ProcessorTime", "FreeAndZeroPageList", "AvailableBytes")][string[]] $MonitorList = @("CommittedBytesInUse", "AvailableKBytes", "ProcessorTime", "FreeAndZeroPageList", "AvailableBytes"),
     [int] $Interval = 1,
     [ValidateSet("Continue", "SilentlyContinue", "Stop")][string] $ErrorAction_ = "Continue",
     [string] $TimeStampFormat = "MM/dd/yyyy HH:mm:ss",
@@ -10,6 +10,8 @@ $CounterHash = @{
     CommittedBytesInUse = "\memory\% committed bytes in use";
     AvailableKBytes = "\Memory\Available KBytes";
     ProcessorTime = "\Processor(_Total)\% processor time";
+    FreeAndZeroPageList = "\Memory\Free & Zero Page List Bytes";
+    AvailableBytes = "\Memory\Available Bytes";
 }
 
 if (-not $SkipHeader) {
